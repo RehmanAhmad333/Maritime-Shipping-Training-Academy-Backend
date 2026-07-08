@@ -68,3 +68,5 @@ def admin_stats(db: Session = Depends(get_db)):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="An unexpected error occurred."
         )
+
+

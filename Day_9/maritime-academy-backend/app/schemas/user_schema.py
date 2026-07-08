@@ -34,3 +34,25 @@ class UserResponse(BaseModel):
 class UserUpdate(BaseModel):
     full_name: Optional[str] = None
     phone: Optional[str] = None
+
+
+from pydantic import BaseModel
+from typing import Optional
+
+class UserUpdate(BaseModel):
+    full_name: Optional[str] = None
+    phone:     Optional[str] = None
+
+class RoleUpdate(BaseModel):
+    role: str  # student | trainer | admin
+
+class UserResponse(BaseModel):
+    id:         int
+    full_name:  str
+    email:      str
+    role:       str
+    phone:      Optional[str] = None
+    is_active:  bool
+
+    class Config:
+        from_attributes = True
